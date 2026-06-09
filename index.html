@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AquaSuma — Browse PDF documents from Google Drive."
+    />
+    <title>AquaSuma</title>
+    <link rel="stylesheet" href="css/styles.css?v=4" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1 class="site-title">AquaSuma</h1>
+      <p class="site-subtitle" id="pdf-counter" aria-live="polite"></p>
+    </header>
+
+    <main class="viewer" role="main">
+      <button
+        class="nav-arrow nav-arrow--left"
+        id="btn-prev"
+        type="button"
+        aria-label="Previous document"
+        disabled
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+        </svg>
+      </button>
+
+      <section class="viewer__center" aria-label="Document viewer">
+        <h2 class="viewer__title" id="pdf-title"></h2>
+
+        <div class="viewer__frame-wrap" id="frame-wrap">
+          <iframe
+            class="viewer__frame"
+            id="pdf-frame"
+            title="PDF document"
+            allow="autoplay; fullscreen"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+
+          <div class="viewer__empty is-hidden" id="empty-state">
+            <p>No documents configured yet.</p>
+            <p class="viewer__empty-hint">
+              Add PDF file IDs to <code>data/pdfs.json</code> to get started.
+            </p>
+          </div>
+
+          <div class="viewer__loading is-hidden" id="loading-state">
+            <span class="spinner" aria-hidden="true"></span>
+            <span>Loading document…</span>
+          </div>
+        </div>
+      </section>
+
+      <button
+        class="nav-arrow nav-arrow--right"
+        id="btn-next"
+        type="button"
+        aria-label="Next document"
+        disabled
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+        </svg>
+      </button>
+    </main>
+
+    <footer class="site-footer">
+      <p>Use the arrows or keyboard ← → to browse documents.</p>
+    </footer>
+
+    <script src="js/app.js?v=5" type="module"></script>
+  </body>
+</html>
