@@ -6,7 +6,7 @@ import sys
 from pathlib import Path
 from urllib.request import urlopen
 
-FOLDER_ID = "1upsBl3ViWUAVrqsVVtf-LlsleJSPFz1x"
+FOLDER_ID = ""
 EMBED_URL = f"https://drive.google.com/embeddedfolderview?id={FOLDER_ID}#list"
 OUTPUT_PATH = Path(__file__).resolve().parent.parent / "data" / "pdfs.json"
 FIRST_DOCUMENT_TITLE = "Cuadro 2026.pdf"
